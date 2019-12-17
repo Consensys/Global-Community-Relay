@@ -6,6 +6,7 @@
 <img src="./src/assets/honeycombwhite.png" width="50%">
 </div>
 
+*Available on Ropsten*
 
 ForexTrader uses the Chainlink/Honeycomb oracle system and the Fixer API to track changes in exchange rates on-chain.
 
@@ -29,6 +30,11 @@ Watch this [demo video](https://www.youtube.com/watch?v=7OARI0ggJVc) to learn mo
 * **Flip the `Accept Trade` button to `Update Price`**
 * **Run the price update**
 * **The smart contract will reallocate the collateral between counterparties based on the change in exchange rate**
+
+## Funding a Contract with LINK Token
+* **You need to fund a trade contract with LINK token for many of the functions to work**
+* **You can get Ropsten LINK at [the faucet](https://ropsten.chain.link/)**
+* **Refer to the demo video for the full run-through**
 
 
 
