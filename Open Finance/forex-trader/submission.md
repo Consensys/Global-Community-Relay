@@ -5,6 +5,8 @@
 ## Project Summary
 ForexTrader provides permissionless access to leveraged, p2p foreign currency trading. Using the Chainlink/Honeycomb oracle system and the Fixer API, ForexTrader trustlessly updates, reprices and settles forex trades on-chain. 
 
+See the `README` for step-by-step instructions on how to use ForexTrader.
+
 ## Project Team
 List each team member, along with the below fields
 
