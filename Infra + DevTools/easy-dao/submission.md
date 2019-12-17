@@ -7,6 +7,8 @@ Decentralized governance is an exciting topic and a promising development for We
 
 If you're organizing a professional event, a group trip or a charitable giving drive, EasyDAO is a simple and transparent way to find consensus without overloading members of the group with technical details.
 
+Step by step instructions for each feature available in the `README`.
+
 ## Project Team
 List each team member, along with the below fields
 
