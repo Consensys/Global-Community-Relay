@@ -5,10 +5,6 @@ import Confirm from "./Confirm";
 import SubmitButton from "./SubmitButton";
 import Select from "react-select";
 import { createDAO, DAOFactoryContractEthers } from "../../services/daoFactory";
-// import {
-//   createTrade,
-//   FTFContractEthers
-// } from "../../services/forexTradeFactory";
 import Web3 from "web3";
 import "./new.css";
 
