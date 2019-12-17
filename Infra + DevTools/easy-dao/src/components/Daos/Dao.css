@@ -1,0 +1,67 @@
+.address-input {
+  font-size: 12px;
+  height: 40px;
+  width: 300px;
+}
+
+.accept-button {
+  cursor: pointer;
+}
+
+table {
+  border-spacing: 0;
+  border: 1px solid lightgrey;
+  font-size: 12px;
+}
+
+table tr :last-child td {
+  border-bottom: 0;
+}
+
+table th,
+td {
+  margin: 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+}
+
+.table-row-content {
+  cursor: pointer;
+}
+
+.table-row-content:hover {
+  color: blue !important;
+}
+
+.transfer-text {
+    font-size: 12px;
+    color: blue;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.inactive-transfer {
+    color: gray !important;
+}
+
+.trade-table {
+    overflow-y: scroll;
+}
+
+.flip-img {
+  height: 30px;
+  width: auto;
+  cursor: pointer;
+}
+
+.go-back {
+  left: -70px;
+  top: 36px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.go-back:hover {
+  color: blue;
+}

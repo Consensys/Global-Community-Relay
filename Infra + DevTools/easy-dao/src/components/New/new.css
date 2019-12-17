@@ -1,0 +1,22 @@
+.option-line {
+  text-align: center;
+  font-size: 20px;
+}
+
+.react-select-container {
+  width: 130px;
+  font-size: 14px;
+}
+
+.add-opacity {
+    opacity: 0.2;
+}
+
+.submit-button {
+  width: 160px;
+  cursor: pointer;
+}
+
+button {
+  -webkit-appearance: none;
+}
