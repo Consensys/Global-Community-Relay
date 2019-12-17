@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+body {
+  background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  height: 100vh;
+  font-family: 'Courier New', Courier, monospace;
+}
