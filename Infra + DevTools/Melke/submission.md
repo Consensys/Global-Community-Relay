@@ -13,5 +13,5 @@ Melke is offchain scaling solution for ethereum. The basic idea of Melke is that
 ## Link to Ancillary Material
 
 
-- **Repository: https://github.com/xVETTEx/Melke-protocl/**
+- **Repository: https://github.com/xVETTEx/Melke-protocol/**
 - **Documentation: https://github.com/xVETTEx/Meke-protocol/wiki/**
