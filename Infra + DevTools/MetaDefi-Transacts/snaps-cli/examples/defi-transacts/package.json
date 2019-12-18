@@ -1,0 +1,39 @@
+{
+  "name": "recipient-address-auditor",
+  "version": "1.0.0",
+  "description": "Audits recipients of new transactions and updates metamask state with audit results",
+  "main": "index.js",
+  "dependencies": {
+    "ethereumjs-tx": "^2.1.1",
+    "ethers": "^4.0.40",
+    "web3": "^1.2.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetaMask/snaps-cli.git"
+  },
+  "web3Wallet": {
+    "bundle": {
+      "local": "dist/bundle.js",
+      "url": "http://localhost:8082/dist/bundle.js"
+    },
+    "initialPermissions": {
+      "addAddressAudit": {},
+      "alert": {},
+      "importAccountWithStrategy": {},
+      "metamask_getPluginState": {},
+      "metamask_getTxById": {},
+      "metamask_tx:status-update": {},
+      "metamask_updatePluginState": {},
+      "newUnapprovedTx": {},
+      "setAccountLabel": {},
+      "setAddressBook": {}
+    }
+  }
+}
