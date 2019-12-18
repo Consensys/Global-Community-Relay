@@ -35,10 +35,9 @@ yarn start`
 npm i -g snaps-cli`
 4. Build metamask snap by executing following.
 `cd examples/defi-transacts
-mm-snap build
 mm-snap serve`
 5. Now Visit below url as prompted.
-`http://localhost:8081` 
+`http://localhost:8082` 
 
 ## Link to Ancillary Material
 Pitch Deck: https://docs.google.com/presentation/d/1CB5SbJK7KNLEKlcc-aPhI5XHhGO_gewguDFheMAAU1Y/edit?usp=sharing
