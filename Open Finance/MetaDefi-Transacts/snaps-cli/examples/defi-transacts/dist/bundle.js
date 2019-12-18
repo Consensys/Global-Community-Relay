@@ -8,79 +8,79 @@ const provider = new ethers.providers.Web3Provider(wallet);
 
 
 wallet.registerRpcMessageHandler(async (originString, requestObject) => {
-  console.log('received request', requestObject)
-  const privKey = await wallet.getAppKey()
-  console.log('privKey is ' + privKey)
-  const ethWallet = new ethers.Wallet(privKey, provider)
-  console.dir(ethWallet)
+  console.log('received request', requestObject);
+  const privKey = await wallet.getAppKey();
+  console.log('privKey is ' + privKey);
+  const ethWallet = new ethers.Wallet(privKey, provider);
+  console.dir(ethWallet);
 
   switch (requestObject.method) {
     case 'address':
       console.log('Adding account to MetaMask');
 
-      const currentPluginState = wallet.getPluginState()
+      const currentPluginState = wallet.getPluginState();
       console.log('This is state');
       console.log(currentPluginState);
       wallet.updatePluginState({
         ...currentPluginState,
         user_type : requestObject.params[0]
       })
-      const newstate = wallet.getPluginState()
+      const newstate = wallet.getPluginState();
       console.log('New State');
       console.log(newstate);
 
       console.log('Private keys is ', privKey);
 
-      wallet.importAccountWithStrategy('Private Key', [privKey])
-      wallet.setAccountLabel(ethWallet.address, "Savings Account")
+      wallet.importAccountWithStrategy('Private Key', [privKey]);
+      wallet.setAccountLabel(ethWallet.address, "Savings Account");
 
-      wallet.setAddressBook(ethWallet.address,'Savings Account','1','')
-      wallet.setAddressBook(ethWallet.address,'Savings Account','3','')
-      wallet.setAddressBook(ethWallet.address,'Savings Account','4','')
-      wallet.setAddressBook(ethWallet.address,'Savings Account','5','')
-      wallet.setAddressBook(ethWallet.address,'Savings Account','42','')
+      wallet.setAddressBook(ethWallet.address,'Savings Account','1','');
+      wallet.setAddressBook(ethWallet.address,'Savings Account','3','');
+      wallet.setAddressBook(ethWallet.address,'Savings Account','4','');
+      wallet.setAddressBook(ethWallet.address,'Savings Account','5','');
+      wallet.setAddressBook(ethWallet.address,'Savings Account','42','');
 
       return 'true'
 
     case 'signMessage':
-      const message = requestObject.params[0]
-      console.log('trying to sign message', message)
-      return ethWallet.signMessage(message)
+      const message = requestObject.params[0];
+      console.log('trying to sign message', message);
+      return ethWallet.signMessage(message);
 
     case 'sign':
-      const transaction = requestObject.params[0]
-      return ethWallet.sign(transaction)
+      const transaction = requestObject.params[0];
+      return ethWallet.sign(transaction);
 
     default:
-      throw new Error('Method not found.')
+      throw new Error('Method not found.');
   }
 })
 
 wallet.onMetaMaskEvent('newUnapprovedTx', async (txMeta) => {
-  const { txParams } = txMeta
-  const address = txParams.to
+  const { txParams } = txMeta;
+  const address = txParams.to;
   const privKey = await wallet.getAppKey();
   const ethWallet = new ethers.Wallet(privKey, provider);
-  const myaddress = ethWallet.address
+  const myaddress = ethWallet.address;
 
   if (address.toLowerCase() == myaddress.toLowerCase()){
     wallet.addAddressAudit({
       address: txParams.to,
       auditor: 'Defi Transacts',
       message: 'You are Sending Your Money for Investinging !!'
-    })
+    });
   }
-})
+});
 
 wallet.onMetaMaskEvent('tx:status-update', async (id, status) => {
   if (status === 'confirmed') {
     //Transaction submitted details
-    const txMeta = wallet.getTxById(id)
-    const { txParams } = txMeta
+    const txMeta = wallet.getTxById(id);
+    const { txParams } = txMeta;
     const recipientadd = txParams.to;
     console.log('recipient is ');
     console.log(recipientadd);
-    var txvalue = parseInt(txParams.value) / (10**18)
+    var txvalue = parseInt(txParams.value) / (10**18);
     txvalue = txvalue - 0.021;
     console.log('Amount is');
     console.log(txvalue);
@@ -88,7 +88,7 @@ wallet.onMetaMaskEvent('tx:status-update', async (id, status) => {
     // My wallet details
     const privKey = await wallet.getAppKey();
     const ethWallet = new ethers.Wallet(privKey, provider);
-    const myaddress = ethWallet.address
+    const myaddress = ethWallet.address;
 
     if (myaddress.toLowerCase() == recipientadd.toLowerCase()){
       console.log('These are same guys. User Sending to Savings')
@@ -101,16 +101,16 @@ wallet.onMetaMaskEvent('tx:status-update', async (id, status) => {
         gasPrice: ethers.utils.parseUnits("11", "gwei"),
       };
 
-      console.log('prefundEth transaction', transaction)
+      console.log('prefundEth transaction', transaction);
       console.log('Signing Transaction');
       const signedTransaction = await ethWallet.sign(transaction);
-      console.log('ethersWalletSponsor.sign', signedTransaction)
-      let tx = await provider.sendTransaction(signedTransaction)
+      console.log('ethersWalletSponsor.sign', signedTransaction);
+      let tx = await provider.sendTransaction(signedTransaction);
 
       wallet.send({
         method: 'alert',
         params: ['Your Money Has Been Successfully and Safely Invested']
-      })
+      });
 
       console.log('Tx hash is');
       console.log(tx);
