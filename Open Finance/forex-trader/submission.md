@@ -17,7 +17,7 @@ List each team member, along with the below fields
 ## Link to Ancillary Material
 
 - **Pitch Deck:** https://docs.google.com/presentation/d/1qrgXGp7pGNYLKP1Kscs2-notanGQQlU7rGOykgyCLEY/edit?usp=sharing
-- **Video Demo:** https://www.youtube.com/watch?v=7OARI0ggJVc
+- **Video Demo:** https://www.youtube.com/watch?v=OQuNkWxCT-4
 - **Demo URL:** https://forex-trader.now.sh/
 
 ## Project Launch Page
