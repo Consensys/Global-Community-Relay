@@ -259,7 +259,7 @@
     "http-server": "^0.11.1",
     "isomorphic-fetch": "^2.2.1",
     "jsdoc": "^3.6.2",
-    "jsdom": "^11.2.0",
+    "jsdom": "^16.5.0",
     "jsdom-global": "^3.0.2",
     "karma": "^4.1.0",
     "karma-chrome-launcher": "^2.2.0",
