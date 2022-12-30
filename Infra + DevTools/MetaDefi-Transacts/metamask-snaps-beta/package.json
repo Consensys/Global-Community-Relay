@@ -118,7 +118,7 @@
     "extension-port-stream": "^1.0.0",
     "extensionizer": "^1.0.1",
     "fast-deep-equal": "^2.0.1",
-    "fast-json-patch": "^2.0.4",
+    "fast-json-patch": "^3.1.1",
     "fuse.js": "^3.2.0",
     "gaba": "^1.9.0",
     "human-standard-token-abi": "^2.0.0",
